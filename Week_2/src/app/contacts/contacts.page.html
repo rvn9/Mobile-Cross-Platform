@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contacts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let  contact of contacts">
+
+    <!-- avatar -->
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img [src]="contact.image"></ion-img>
+      </ion-avatar>
+      <ion-label>{{contact.nama}}</ion-label> <br>
+    </ion-item>
+
+    <ion-list>
+      <!-- email -->
+      <ion-row>
+        <ion-item lines="none"><ion-icon  name="mail-outline"> </ion-icon></ion-item>
+        <ion-item>
+          <ion-label> {{contact.email[0]}} &nbsp; &nbsp; &nbsp; {{contact.email[1]}} </ion-label>
+        </ion-item>
+      </ion-row>
+
+      <!-- phone number -->
+      <ion-row>
+        <ion-item lines="none"><ion-icon  name="call-outline"> </ion-icon></ion-item>
+        <ion-item>
+          <ion-label> {{contact.noTelp[0]}} &nbsp; &nbsp; &nbsp; {{contact.noTelp[1]}} </ion-label>
+        </ion-item>
+      </ion-row>
+
+    </ion-list>
+
+  </ion-card>
+</ion-content>
