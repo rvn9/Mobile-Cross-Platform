@@ -1,0 +1,32 @@
+<ion-menu side="start" menuId="placeMenu" contentId="placeContent">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>UMN BnB</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!-- Discover Places      -->
+      <ion-item [routerLink]="['/places/tabs/discover']">
+        <ion-icon name="business-outline"></ion-icon> &nbsp;
+        Discover Places
+      </ion-item>
+      <!--  Your bookings    -->
+      <ion-item [routerLink]="['/places/tabs/offer']">
+        <ion-icon name="checkbox-outline"></ion-icon> &nbsp;
+        Your Bookings
+      </ion-item>
+      <!-- Logout-->
+      <ion-item>
+        <ion-icon name="log-out"></ion-icon> &nbsp;
+        Logout
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-app>
+  <ion-router-outlet id="placeContent"></ion-router-outlet>
+</ion-app>
+
+

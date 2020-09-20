@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-title>My Offers</ion-title>
+      <ion-icon [routerLink]="['/places/tabs/offer/new-offer']" slot="end" style="width: 24px; color:dodgerblue;  height: 24px;" name="add-outline"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card [routerLink]="['/places/tabs/offer/edit-offer']" *ngFor="let  place of places">
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img [src]="place.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-item>
+          <ion-label>{{place.title}}</ion-label> <br>
+      </ion-item>
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>
