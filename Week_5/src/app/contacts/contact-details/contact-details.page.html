@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contacts Details
+      <ion-icon name="trash" (click)="presentAlertConfirm()"></ion-icon>
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/contacts"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+
+    <!-- avatar -->
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img [src]="loadContacts.image"></ion-img>
+      </ion-avatar>
+      <ion-label>{{loadContacts.nama}}</ion-label> <br>
+    </ion-item>
+
+    <ion-list>
+      <!-- email -->
+      <ion-row *ngFor="let  email of loadContacts.email">
+        <ion-item lines="none"><ion-icon  name="mail-outline"> </ion-icon></ion-item>
+        <ion-item>
+          <ion-label> {{email}}</ion-label>
+        </ion-item>
+      </ion-row>
+
+      <!-- phone number -->
+      <ion-row *ngFor="let  noTelp of loadContacts.noTelp">
+        <ion-item lines="none"><ion-icon  name="call-outline"> </ion-icon></ion-item>
+        <ion-item>
+          <ion-label> {{noTelp}} </ion-label>
+        </ion-item>
+      </ion-row>
+
+    </ion-list>
+
+  </ion-card>
+</ion-content>
