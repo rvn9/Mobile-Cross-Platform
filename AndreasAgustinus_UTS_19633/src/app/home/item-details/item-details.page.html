@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item lines="none">
+      <ion-icon color="#ffffff" slot="end" (click)="confirmDelete()" name="trash"></ion-icon>
+    </ion-item>
+    <ion-back-button slot="start" defaultHref="/home"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-img  [src]="itemDetails.foto"></ion-img>
+  <ion-label> Nama Barang  : {{itemDetails.nama}} <br></ion-label>
+  <ion-label> Harga Barang : {{itemDetails.harga}}<br></ion-label>
+  <ion-label> Stok : {{itemDetails.stok}}<br></ion-label>
+  <ion-label> Model : {{itemDetails.model}}<br></ion-label>
+
+  <ion-content *ngIf="itemDetails.jenis === 'CPU' ">
+    <ion-label> Base Clock : {{itemDetails.deskripsi.baseClock}}<br></ion-label>
+    <ion-label> Boost Clock : {{itemDetails.deskripsi.boostClock}}<br></ion-label>
+    <ion-label> Jumlah Core : {{itemDetails.deskripsi.jumlahCore}}<br></ion-label>
+    <ion-label> Thread : {{itemDetails.deskripsi.thread}}</ion-label>
+  </ion-content>
+
+  <ion-content *ngIf="itemDetails.jenis === 'RAM' ">
+    <ion-label> Speed : {{itemDetails.deskripsi.speed}}<br></ion-label>
+    <ion-label> Ukuran : {{itemDetails.deskripsi.ukuran}}</ion-label>
+  </ion-content>
+
+  <ion-content *ngIf="itemDetails.jenis === 'Motherboard' ">
+    <ion-label> Chipset : {{itemDetails.deskripsi.chipset}}<br></ion-label>
+    <ion-label> Compatible : {{itemDetails.deskripsi.compatible}}</ion-label>
+  </ion-content>
+
+</ion-content>
+
+
+
+
+
+
+
