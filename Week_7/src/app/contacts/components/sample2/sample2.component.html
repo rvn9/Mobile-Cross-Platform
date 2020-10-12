@@ -1,0 +1,10 @@
+<ion-item [routerLink]="['./', 'detail', contact.name]" color="tertiary">
+  <ion-avatar slot="start">
+    <ion-img [src]="contact.profileImageUrl"></ion-img>
+  </ion-avatar>
+  <ion-label>{{contact.name}}</ion-label>
+  <ion-icon name="mail-outline"></ion-icon>
+  <ion-label>{{contact.email.length}}</ion-label>
+  <ion-icon name="call-outline"></ion-icon>
+  <ion-label>{{contact.phone.length}}</ion-label>
+</ion-item>

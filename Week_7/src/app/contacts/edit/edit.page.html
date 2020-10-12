@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start" fill="">
+      <ion-back-button defaultHref="/contacts"></ion-back-button>
+    </ion-button>
+    <ion-title>Edit Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item color="secondary">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item color="secondary">
+        <ion-label position="floating">Profile Image URL</ion-label>
+        <ion-input type="text" formControlName="profileImageUrl"></ion-input>
+      </ion-item>
+      <ion-item color="secondary">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item color="secondary">
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input type="text" formControlName="phone"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" color="tertiary" expand="block" (click)="onSave()">
+      Save
+    </ion-button>
+  </form>
+</ion-content>

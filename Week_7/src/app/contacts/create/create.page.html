@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="start" fill="">
+      <ion-back-button defaultHref="/contacts"></ion-back-button>
+    </ion-button>
+    <ion-title>Create New Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <ion-list>
+      <ion-item color="secondary">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="text"
+                   ngModel
+                   name="name"
+                   #nameCtrl="ngModel"
+                   required></ion-input>
+      </ion-item>
+      <ion-item color="secondary">
+        <ion-label position="floating">Profile Image URL</ion-label>
+        <ion-input type="text"
+                   ngModel
+                   name="profileImageUrl"
+                   #profileImageUrlCtrl="ngModel"></ion-input>
+      </ion-item>
+      <ion-item color="secondary">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email"
+                   ngModel
+                   name="email"
+                   required
+                   #email="ngModel"
+                   email></ion-input>
+      </ion-item>
+      <ion-item color="secondary">
+        <ion-label position="floating">Phone</ion-label>
+        <ion-input type="text"
+                   ngModel
+                   name="phone"
+                   #phoneCtrl="ngModel"
+                   required></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" color="tertiary" expand="block" [disabled]="form.invalid">
+      Save
+    </ion-button>
+  </form>
+</ion-content>
