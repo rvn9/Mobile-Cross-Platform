@@ -9,11 +9,12 @@
 
 
 <ion-content>
-  <ion-img  [src]="itemDetails.foto"></ion-img>
+  <ion-img [src]="itemDetails.foto"></ion-img> <br>
   <ion-label> Nama Barang  : {{itemDetails.nama}} <br></ion-label>
   <ion-label> Harga Barang : {{itemDetails.harga}}<br></ion-label>
   <ion-label> Stok : {{itemDetails.stok}}<br></ion-label>
   <ion-label> Model : {{itemDetails.model}}<br></ion-label>
+
 
   <ion-content *ngIf="itemDetails.jenis === 'CPU' ">
     <ion-label> Base Clock : {{itemDetails.deskripsi.baseClock}}<br></ion-label>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AndreasAgustinus_UTS_19633</string>
+    <string name="title_activity_main">AndreasAgustinus_UTS_19633</string>
+    <string name="package_name">com.example.uts</string>
+    <string name="custom_url_scheme">com.example.uts</string>
+</resources>
