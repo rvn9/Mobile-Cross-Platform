@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contact List</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button *ngIf="Toggle" routerLink="/contacts/create">
+        CREATE
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let contact of contacts">
+      <ion-label>{{contact.nama}} - {{contact.email}} - {{contact.telp}}</ion-label>
+      <ion-button *ngIf="Toggle" routerLink="/contacts/edit/{{contact.key}}">EDIT</ion-button>
+      <ion-button *ngIf="Toggle" (click)="delete($event, contact.key)">DELETE</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer (click)="logout()">
+  <ion-toolbar color="secondary">
+    <ion-title>Log out</ion-title>
+  </ion-toolbar>
+</ion-footer>
