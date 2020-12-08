@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button icon="close" defaultHref="/contact">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Contact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nama</ion-label>
+        <ion-input type="text" ngModel name="nama"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Telepon</ion-label>
+        <ion-input type="text" ngModel name="telepon"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" ngModel name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button color="danger" expand="full" (click)="showCurrentLoc()">Current Location</ion-button>
+      </ion-item>
+      <ion-item>
+        Lat:
+        <ion-input type="" ngModel name="Lat" value="{{currLat}}" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        Lng:
+        <ion-input type="text" ngModel name="Lng" value="{{currLng}}" readonly></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" color="primary" expand="block">Simpan</ion-button>
+  </form>
+</ion-content>
