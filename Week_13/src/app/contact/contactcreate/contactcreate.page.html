@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/contactindex"></ion-back-button>
+    </ion-buttons>
+    <ion-title>contactcreate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Nama</ion-label>
+          <ion-input type="text" ngModel name="nama"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="text" ngModel name="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Telpon</ion-label>
+          <ion-input type="text" ngModel name="telpon"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button size="small" (click)="getPicture('camera')">
+            <ion-icon name="camera" slot="start"></ion-icon>
+            <ion-label>Camera</ion-label>
+          </ion-button>
+      
+          <ion-button size="small" (click)="getPicture('gallery')">
+            <ion-icon name="image" slot="start"></ion-icon>
+            <ion-label>Gallery</ion-label>
+          </ion-button>
+      
+          <input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)"/>
+
+          <ion-card *ngIf="photo">
+            <ion-card-content>
+              <img [src]="photo">
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
+      <ion-button type="submit" color="primary" expand="block">Simpan</ion-button>
+    </form>
+  </ion-content>
+</ion-content>
+
