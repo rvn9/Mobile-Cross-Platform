@@ -1,0 +1,59 @@
+<ion-content>
+  <div class="title">
+    <h1>Register</h1>
+  </div>
+  <div class="form">
+    <form  (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <ion-list>
+        <!-- First Name -->
+        <ion-item color="danger" lines="none" *ngIf="!fnameCtrl.valid && fnameCtrl.touched">
+          <ion-label>First Name Tidak boleh Kosong!</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input type="text" #fnameCtrl="ngModel" ngModel name="fname" required></ion-input>
+          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+        </ion-item>
+        <!-- Last Name -->
+        <ion-item>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input type="text" #lnameCtrl="ngModel" ngModel name="lname"></ion-input>
+          <ion-icon name="person" color="primary" slot="end"></ion-icon>
+        </ion-item>
+        <!-- Email -->
+        <ion-item color="danger" lines="none" *ngIf="!emailCtrl.valid && emailCtrl.touched">
+          <ion-label>Email Tidak boleh Kosong!</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" #emailCtrl="ngModel" ngModel name="email" required></ion-input>
+          <ion-icon name="mail" color="primary" slot="end"></ion-icon>
+        </ion-item>
+        <!-- Password -->
+        <ion-item color="danger" lines="none" *ngIf="!passwordCtrl.valid && passwordCtrl.touched">
+          <ion-label>Password Tidak boleh Kosong!</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" #passwordCtrl="ngModel" ngModel name="password" required></ion-input>
+          <ion-icon name="lock-closed" color="primary" slot="end"></ion-icon>
+        </ion-item>
+        <!-- Confirm Password -->
+        <ion-item color="danger" lines="none" *ngIf="!cpasswordCtrl.valid && cpasswordCtrl.touched">
+          <ion-label>Confirm Password Tidak boleh Kosong!</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirm Password</ion-label>
+          <ion-input type="password" #cpasswordCtrl="ngModel" ngModel name="confirmPassword" required></ion-input>
+          <ion-icon name="lock-closed" color="primary" slot="end"></ion-icon>
+        </ion-item>
+      </ion-list>
+      <div class="loginlink">
+        Have an account? <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Login Here!</a>
+      </div>
+      <ion-button type="submit" [disabled]="!f.valid" expand="block" shape="round">
+        Register
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

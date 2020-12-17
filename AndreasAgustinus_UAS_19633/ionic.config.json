@@ -1,0 +1,8 @@
+{
+  "name": "Mobile2_UAS",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
